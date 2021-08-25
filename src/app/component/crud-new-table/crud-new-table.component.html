@@ -1,0 +1,35 @@
+<h1     style="text-indent: 500px;">Customer update</h1><br><br>
+
+<h6>kindly click on checkbox to delete row entry</h6>
+  <table class="table table-striped" id="employeeList">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">profession</th>
+        <th scope="col">Salary</th>
+        <th scope="col">City</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let person of persons; let i = index;">
+          <td> <input type="checkbox" name="firstName"  (click)="selectPerson($event,person)" ></td>
+            <td>{{person.firstName}} </td>
+            <td>{{person.lastName}} </td>
+            <td>{{person.profession}} </td>
+            <td>{{person.salary}}</td>            
+            <td>{{person.city}}</td>
+            <td><button class="btn btn-primary"  (click)="edit(person)">Edit</button></td>
+          </tr>
+    </tbody>
+  </table>
+<br>
+<br>
+
+<button class="btn btn-primary" (click)="addPerson()">Back to Form</button> &nbsp;&nbsp;<button class="btn btn-primary" (click)="delete()" [disabled]="_eDel">delete</button>
+
+
+
+  
